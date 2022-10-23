@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+.landingPage {
+	position: absolute;
+	right: 0;
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: cover;
+	background-position: 100%;
+	top: 0;
+	background-color: hsla(26, 5%, 70%, 0.2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+	height: 125px;
+	width: 200px;
+	transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+	opacity: 1;
+	fill: #fc8019;
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loginSignupRow {
+	height: 100%;
+	display: flex;
+	justify-content: end;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.text-align-right {
+	text-align: right;
 }
 
-.App-link {
-  color: #61dafb;
+.h2Heading {
+	line-height: 40px;
+	letter-spacing: -0.3px;
+	color: #686b78;
+	font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.findFood {
+	color: #fff;
+	background-color: #fc8019;
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%);
+	font-size: 16px;
+}
+
+.findFood:hover {
+	color: #fff;
+	background-color: #ff7300;
+}
+
+.location_btn {
+	border-color: lightgray;
+}
+
+.odd {
+	font-weight: 600;
+	font-size: 16px;
+	margin-right: 8px;
+	color: #686b78;
+	line-height: 1.5;
+	text-decoration: none;
+}
+
+.even {
+	font-weight: 600;
+	font-size: 16px;
+	margin-right: 8px;
+	color: #a2a2a2;
+	line-height: 1.5;
+	text-decoration: none;
 }
