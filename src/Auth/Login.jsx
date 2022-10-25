@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useRef } from "react";
 
-const Login = ({ value, desc }) => {
+const Login = ({ value, desc, setSignUpClicked, setLoginClicked }) => {
 	const [mobInput, setMobInput] = useState("");
 	const numberInput = useRef();
 	// useState - boolean - false --- referral_code
@@ -13,6 +13,7 @@ const Login = ({ value, desc }) => {
 			<div className="row">
 				<div className="col-md-6">
 					<h4>Login</h4>
+					<h5>{value}</h5>
 					<p>
 						or{" "}
 						{/* !referral_code && <span
@@ -28,6 +29,8 @@ const Login = ({ value, desc }) => {
 							onClick={() => {
 								console.log("span clicked");
 								//boolean - true
+								setLoginClicked(false);
+								setSignUpClicked(true);
 							}}
 							style={{ color: "orange", cursor: "pointer" }}
 						>

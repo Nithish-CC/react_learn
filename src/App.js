@@ -1,5 +1,5 @@
 import { Button, Offcanvas } from "bootstrap";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Login from "./Auth/Login";
@@ -12,7 +12,34 @@ function App() {
 	const [signUpClicked, setSignUpClicked] = useState(false);
 
 	const titleChange = ["Hungry", "Late night at office ?", "Gave a good meal"];
-	const [counter, setCounter] = useState(1);
+
+	//useEffect
+
+	// useEffect(() => {
+	// 	console.log("Call at each time");
+	// });
+
+	// useEffect(() => {
+	// 	console.log("Hi , Iam Call at only one time");
+	// }, []);
+
+	const [counter, setCounter] = useState(0);
+
+	//Two way binding with props
+
+	useEffect(() => {
+		console.log(counter, "::::: value");
+		if (titleChange && titleChange.length - 1 > counter) {
+			setTimeout(() => {
+				setCounter(counter + 1);
+			}, 3000);
+			console.log(counter, "*********** settimeout value");
+		} else {
+			setTimeout(() => {
+				setCounter(0);
+			}, 3000);
+		}
+	}, [counter]);
 
 	return (
 		<div className="row container-fluid">
@@ -44,6 +71,16 @@ function App() {
 								Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
 							</Offcanvas.Body>
 						</Offcanvas> */}
+
+						<button
+							class="btn btn-primary"
+							type="button"
+							onClick={() => {
+								setCounter(counter + 1);
+							}}
+						>
+							counter
+						</button>
 
 						<button
 							class="btn btn-primary"
@@ -87,10 +124,17 @@ function App() {
 							</div>
 							<div class="offcanvas-body">
 								{loginClicked && (
-									<Login value={"From Canvas Login"} desc="Know where your order is at all times, from the restaurant to your doorstep" />
+									<Login
+										setSignUpClicked={setSignUpClicked}
+										setLoginClicked={setLoginClicked}
+										value={"From Canvas Login"}
+										desc="Know where your order is at all times, from the restaurant to your doorstep"
+									/>
 								)}
 
-								{signUpClicked && <Login value={"From Canvas Signup"} desc="" />}
+								{signUpClicked && (
+									<Login setLoginClicked={setLoginClicked} setSignUpClicked={setSignUpClicked} value={"From Canvas Signup"} desc="" />
+								)}
 							</div>
 						</div>
 					</div>
