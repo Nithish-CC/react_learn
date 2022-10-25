@@ -1,8 +1,10 @@
 import React, { Fragment, useState, useRef } from "react";
 
 const Login = ({ value, desc }) => {
-	const [mobInput, setMobInput] = useState("97917123131");
+	const [mobInput, setMobInput] = useState("");
 	const numberInput = useRef();
+	// useState - boolean - false --- referral_code
+
 	setTimeout(() => {
 		console.log(numberInput.current.value, "refff");
 	}, 3000);
@@ -12,7 +14,25 @@ const Login = ({ value, desc }) => {
 				<div className="col-md-6">
 					<h4>Login</h4>
 					<p>
-						or <span style={{ color: "orange" }}>create an account</span>
+						or{" "}
+						{/* !referral_code && <span
+							onClick={() => {
+								console.log("span clicked");
+								//boolean - true
+							}}
+							style={{ color: "orange", cursor: "pointer" }}
+						>
+							create an account
+						</span> */}
+						<span
+							onClick={() => {
+								console.log("span clicked");
+								//boolean - true
+							}}
+							style={{ color: "orange", cursor: "pointer" }}
+						>
+							create an account
+						</span>
 					</p>
 				</div>
 				<div className="col-md-6">
@@ -37,8 +57,16 @@ const Login = ({ value, desc }) => {
 					placeholder="phone number"
 				/>
 
-				<button className="btn btn-warning w-100 mt-3 findFood">Login</button>
+				<button
+					onClick={() => {
+						setMobInput("");
+					}}
+					className="btn btn-warning w-100 mt-3 findFood"
+				>
+					Login
+				</button>
 			</div>
+			{/* referral_code &&  <h4>input box</h4> */}
 		</Fragment>
 	);
 };

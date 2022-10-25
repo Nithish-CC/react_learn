@@ -10,6 +10,10 @@ function App() {
 	const handleShow = () => setShow(true);
 	const [loginClicked, setLoginClicked] = useState(false);
 	const [signUpClicked, setSignUpClicked] = useState(false);
+
+	const titleChange = ["Hungry", "Late night at office ?", "Gave a good meal"];
+	const [counter, setCounter] = useState(1);
+
 	return (
 		<div className="row container-fluid">
 			<div className="col-md-6">
@@ -95,7 +99,12 @@ function App() {
 				{/* open Canvas */}
 
 				<div className="mt-5">
-					<h1>Late night at office?</h1>
+					{titleChange &&
+						titleChange.length &&
+						titleChange.map((values, index) => {
+							return index === counter && <h1>{values}</h1>;
+						})}
+
 					<h4 className="h2Heading">Order food from favourite restaurants near you.</h4>
 					<div className="input-group input-group-lg mt-5">
 						<input type="text" className="form-control" placeholder="Enter your delivery location" />
