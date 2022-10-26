@@ -1,0 +1,19 @@
+Top Level Parent -- BrowserRouter
+
+Parent Route - Routes --- parent
+
+Child Route - Route -- Child --> Components = {login}
+
+
+-------------------------------------------------------------
+
+Common Routes
+
+No Condition - Free to use -- free to access
+
+Protected Routes
+
+Has Condition --- login --> [Token] --> token && Rotue ={Component}
+
+-------------------------------------------------------------------
+
