@@ -1,10 +1,13 @@
 import { Button, Offcanvas } from "bootstrap";
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useParams } from "react-router-dom";
 import "./App.css";
 import Login from "./Auth/Login";
 
 function App() {
+	const { cityarea } = useParams();
+	console.log(cityarea);
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -146,7 +149,13 @@ function App() {
 					{titleChange &&
 						titleChange.length &&
 						titleChange.map((values, index) => {
-							return index === counter && <h1>{values}</h1>;
+							return (
+								index === counter && (
+									<h1>
+										{values} {cityarea}
+									</h1>
+								)
+							);
 						})}
 
 					<h4 className="h2Heading">Order food from favourite restaurants near you.</h4>

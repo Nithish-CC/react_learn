@@ -17,3 +17,18 @@ Has Condition --- login --> [Token] --> token && Rotue ={Component}
 
 -------------------------------------------------------------------
 
+Go To Console
+
+window
+
+window.location
+
+window.location.pathname -- .split('/') ===> :word ==> useParams
+
+window.location.replace("/") ---> element={<Navigate to="/" />} ---> functions useNavigate("/")
+
+window.location.reload()
+
+-----------------------------------------------------------------------
+
+
