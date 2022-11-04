@@ -31,4 +31,11 @@ window.location.reload()
 
 -----------------------------------------------------------------------
 
+1) api call methods ---- native api call method ----
+------------> using fetch , axios -- third party library
+
+2) 1. Traditional method -- 
+   2. Async await method -- 
+  
+
 

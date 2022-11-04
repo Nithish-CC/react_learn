@@ -6,6 +6,10 @@ import "./App.css";
 import Login from "./Auth/Login";
 
 function App() {
+	React.useEffect(() => {
+		fetch("https://jsonplaceholder.typicode.com/todos/1").then((response) => console.log(response.json()));
+	}, []);
+
 	const { cityarea } = useParams();
 	console.log(cityarea);
 	const [show, setShow] = useState(false);
