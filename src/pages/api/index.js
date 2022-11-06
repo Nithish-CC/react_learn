@@ -4,17 +4,19 @@ import { SwCard } from "../../components/SWcard/card";
 const ApiCalls = () => {
 	const [users, setUsers] = useState([]);
 
+	const getUserData = () => {
+		axios.get("https://gorest.co.in/public/v2/users").then((res) => {
+			console.log(res.data);
+			//res && res.hasOwnProperty("data") && res.data
+			console.log(res && res.hasOwnProperty("data"));
+			if (res && res?.data && res?.data.length) {
+				setUsers(res?.data);
+			}
+		});
+	};
+
 	useEffect(() => {
-		setTimeout(() => {
-			axios.get("https://gorest.co.in/public/v2/users").then((res) => {
-				console.log(res.data);
-				//res && res.hasOwnProperty("data") && res.data
-				console.log(res && res.hasOwnProperty("data"));
-				if (res && res?.data && res?.data.length) {
-					setUsers(res?.data);
-				}
-			});
-		}, 4000);
+		getUserData();
 	}, []);
 
 	return (
@@ -28,7 +30,13 @@ const ApiCalls = () => {
 							}
 							return (
 								<div className="col-md-4">
-									<SwCard id={values.id} title={`Name : ${values.name}`} body={`Email : ${values.email}`} />
+									<SwCard
+										id={values.id}
+										title={`Name : ${values.name}`}
+										body={`Email : ${values.email}`}
+										getUserData={getUserData}
+										setUsers={setUsers}
+									/>
 								</div>
 							);
 						})}

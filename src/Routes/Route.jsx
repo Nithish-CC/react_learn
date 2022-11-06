@@ -4,6 +4,7 @@ import App from "../App";
 import City from "../pages/city/index";
 import ApiCalls from "../pages/api/index";
 import CreateUser from "../pages/api/CreateUser";
+import UpdateUser from "../pages/api/updateUser";
 
 const AppRoute = () => {
 	return (
@@ -14,6 +15,7 @@ const AppRoute = () => {
 				<Route path="*" element={<Navigate to="/" />} />
 				<Route path="/api" element={<ApiCalls />} />
 				<Route path="/api/createuser" element={<CreateUser />} />
+				<Route path="/api/update/:userId" element={<UpdateUser />} />
 			</Routes>
 		</BrowserRouter>
 	);
