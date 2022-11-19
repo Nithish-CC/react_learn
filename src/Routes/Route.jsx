@@ -7,6 +7,7 @@ import CreateUser from "../pages/api/CreateUser";
 import UpdateUser from "../pages/api/updateUser";
 
 const AppRoute = () => {
+	//store
 	return (
 		<BrowserRouter>
 			<Routes>
